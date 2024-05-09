@@ -10,7 +10,7 @@ int main()
  float x[S], y[S], sumX=0, sumX2=0, sumY=0, sumXY=0, a, b;
 
  /* Input */
- cout<<"How many data points? ";
+ cout<<"Enter the number of data points: ";
  cin>>n;
 
  cout<<"Enter data:"<< endl;

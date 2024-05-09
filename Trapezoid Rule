@@ -1,0 +1,31 @@
+#include <iostream>
+#include <math.h>
+//Define function here
+#define f(x) 1/(1+pow(x,2))
+using namespace std;
+int main()
+{
+    float lower, upper, integration=0.0, stepsize,k;
+    int i, subInterval;
+//Input//
+cout<<"Enter the lower limit of integration:   ";
+cin>> lower;
+cout<<"Enter the upper limit of integration:   ";
+cin>>upper;
+cout<<"Enter the number of subintervals:    ";
+cin>>subInterval;
+
+//Calculation//
+//Finding step size//
+stepsize= (upper-lower)/subInterval;
+//Finding integration value//
+integration = f(lower)+f(upper);
+
+    for (i=1;i<=subInterval-1;i++)
+    { k=lower+ i*stepsize;
+    integration=integration+2*(f(k));
+    }
+integration=integration*stepsize/2;
+cout<< endl<<"Required value of integration is:    "<<integration;
+return 0;
+}

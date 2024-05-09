@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+#define f(x) (1/ (1+ pow(x,2)))
+int main ()
+{ 
+float lower, upper, integration=0.0, stepsize, k;
+int subinterval;
+
+cout<< "Enter the lower limit of integration:   ";
+cin>>lower;
+cout<<"Enter the upper limit of integration:   ";
+cin>>upper;
+cout<<"Enter the number of subintervals:   ";
+cin>>subinterval;
+
+    stepsize=(upper-lower)/subinterval;
+    integration= f(lower)+f(upper);
+            
+        for(int i=1;i<=subinterval-1;i++)
+            { k= lower+i*stepsize;
+            integration+= 2*f(k);
+            }
+    integration*= stepsize/2;
+cout<<"\nRequired value of integrations is:"<<integration<<endl;
+return 0;
+}
